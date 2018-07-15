@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BottomTab from './routes'
 
-import './styles/App.css';
+import './styles/index.less';
 
 class App extends Component {
   render() {
