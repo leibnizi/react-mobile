@@ -18,12 +18,9 @@
     "css-loader": "^1.0.0",
     "dotenv": "4.0.0",
     "dotenv-expand": "4.2.0",
-    "eslint": "^5.1.0",
     "eslint-config-react-app": "^2.1.0",
     "eslint-loader": "1.9.0",
     "eslint-plugin-flowtype": "^2.50.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.5",
@@ -103,5 +100,12 @@
   "theme": {
     "brand-primary": "red",
     "color-text-base": "#333"
+  },
+  "devDependencies": {
+    "eslint": "^5.1.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0"
   }
 }
