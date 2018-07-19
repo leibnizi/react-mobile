@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { TabBar } from "antd-mobile";
 import HomeTabBar from '../screens/home'
+import SecondTab from '../screens/SecondTab'
+import ThirdTab from '../screens/ThirdTab'
+import FourthTab from '../screens/FourthTab'
   
 const About = () => (
   <div>
@@ -39,11 +43,38 @@ const Topic = ({ match }) => (
 );
 
 export default class BottomTab extends Component {
+  renderContent = pageText => {
+    return (
+      <div
+        style={{
+          backgroundColor: "white",
+          height: "100%",
+          textAlign: "center"
+        }}
+      >
+        <div style={{ paddingTop: 60 }}>
+          Clicked “{pageText}” tab， show “{pageText}” information
+        </div>
+        <a
+          style={{ display: "block", marginBottom: 600, color: "#108ee9" }}
+          onClick={e => {
+            e.preventDefault();
+            this.setState({
+              fullScreen: !this.state.fullScreen
+            });
+          }}
+        >
+          Click to switch fullscreen
+        </a>
+      </div>
+    );
+  }
   render() {
+    const { history } = this.props;
     return (
       <Router>
         <div>
-          <ul>
+          {/* <ul>
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -55,11 +86,136 @@ export default class BottomTab extends Component {
             </li>
           </ul>
 
-          <hr />
-
+          <hr /> */}
+          
+          <div
+            style={{ position: "fixed", height: "100%", width: "100%", top: 0 }}
+          >
+            <TabBar
+              unselectedTintColor="#949494"
+              tintColor="#33A3F4"
+              barTintColor="white"
+              tabBarPosition="bottom"
+            >
+              <TabBar.Item
+                title="Life"
+                key="Life"
+                icon={
+                  <div
+                    style={{
+                      width: "22px",
+                      height: "22px",
+                      background:
+                        "url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat"
+                    }}
+                  />
+                }
+                selectedIcon={
+                  <div
+                    style={{
+                      width: "22px",
+                      height: "22px",
+                      background:
+                        "url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat"
+                    }}
+                  />
+                }
+                // selected={this.state.selectedTab === "blueTab"}
+                badge={1}
+                onPress={() => {
+                  history.push('/')
+                }}
+                data-seed="logId"
+              >
+                {this.renderContent("Life")}
+              </TabBar.Item>
+              <TabBar.Item
+                icon={
+                  <div
+                    style={{
+                      width: "22px",
+                      height: "22px",
+                      background:
+                        "url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat"
+                    }}
+                  />
+                }
+                selectedIcon={
+                  <div
+                    style={{
+                      width: "22px",
+                      height: "22px",
+                      background:
+                        "url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat"
+                    }}
+                  />
+                }
+                title="Koubei"
+                key="Koubei"
+                badge={"new"}
+                // selected={this.state.selectedTab === "redTab"}
+                onPress={() => {
+                  history.push('/secondTab')
+                }}
+                data-seed="logId1"
+              >
+                {this.renderContent("Koubei")}
+              </TabBar.Item>
+              <TabBar.Item
+                icon={
+                  <div
+                    style={{
+                      width: "22px",
+                      height: "22px",
+                      background:
+                        "url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat"
+                    }}
+                  />
+                }
+                selectedIcon={
+                  <div
+                    style={{
+                      width: "22px",
+                      height: "22px",
+                      background:
+                        "url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat"
+                    }}
+                  />
+                }
+                title="Friend"
+                key="Friend"
+                dot
+                // selected={this.state.selectedTab === "greenTab"}
+                onPress={() => {
+                  history.push('/thirdTab')
+                }}
+              >
+                {this.renderContent("Friend")}
+              </TabBar.Item>
+              <TabBar.Item
+                icon={{
+                  uri:
+                    "https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg"
+                }}
+                selectedIcon={{
+                  uri:
+                    "https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg"
+                }}
+                title="My"
+                key="my"
+                // selected={this.state.selectedTab === "yellowTab"}
+                onPress={() => {
+                  history.push('/fourthTab')
+                }}
+              >
+                {this.renderContent("My")}
+              </TabBar.Item>
+            </TabBar>
+          </div>
           <Route exact path="/" component={HomeTabBar} />
-          <Route path="/about" component={About} />
-          <Route path="/topics" component={Topics} />
+          <Route path="/secondTab" component={SecondTab} />
+          <Route path="/thirdTab" component={ThirdTab} />
+          <Route path="/fourthTab" component={FourthTab} />
         </div>
       </Router>
     )
