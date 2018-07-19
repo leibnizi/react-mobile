@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class FourthTab extends Component {
   render() {
@@ -6,6 +6,6 @@ export default class FourthTab extends Component {
       <div>
         <span>FourthTab</span>
       </div>
-    )
+    );
   }
 }

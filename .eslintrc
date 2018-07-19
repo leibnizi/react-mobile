@@ -3,7 +3,7 @@
         "browser": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
+    "extends": "react-app",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -20,6 +20,7 @@
             "error",
             2
         ],
+        "switch-colon-spacing": ["error", {"after": true, "before": false}],
         "no-undef": "off",
         "no-console": "off",
         "no-unused-vars": "off"
