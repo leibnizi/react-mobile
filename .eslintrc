@@ -25,9 +25,7 @@
         "prefer-promise-reject-errors": [0],
         "comma-dangle": [2, "only-multiline"],
         "space-before-function-paren": [2, "never"],
-        "operator-linebreak": [2, "before"],
         "no-floating-decimal": [0],
-        "react/jsx-boolean-value": [2, "always"],
         "react/prop-types": [0]
     }
 }
