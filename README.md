@@ -1,1 +1,1 @@
-command features
+feature-1test
