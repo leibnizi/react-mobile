@@ -1,1 +1,1 @@
-feature-1test test Emoji :sparkles: :bug: git commit -m ":tada: 
+feature-1test test Emoji :sparkles: :bug: git commit -
