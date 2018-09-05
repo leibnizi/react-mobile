@@ -1,1 +1,1 @@
-feature-1test test Emoji
+feature-1test test Emoji :sparkles:
