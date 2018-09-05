@@ -1,1 +1,1 @@
-feature-1test test Emoji :sparkles:
+feature-1test test Emoji :sparkles: :bug:
