@@ -1,1 +1,1 @@
-feature-1test test Emoji :sparkles: :bug: git commit -m ":tada: Initialize Repo"
+feature-1test test Emoji :sparkles: :bug: git commit -m ":tada: Initialize Repo":fire:
